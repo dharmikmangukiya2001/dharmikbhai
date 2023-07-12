@@ -127,7 +127,7 @@
               <h4 class="mb-2">Adventure starts here 🚀</h4>
               <p class="mb-4">Make your app management easy and fun!</p>
 
-              <form id="formAuthentication" class="mb-3" action="index.html" method="POST">
+              <form id="formAuthentication" class="mb-3" action="/registerdata" method="POST">
                 <div class="mb-3">
                   <label for="username" class="form-label">Username</label>
                   <input
@@ -169,10 +169,20 @@
                 </div>
                 <button class="btn btn-primary d-grid w-100">Sign up</button>
               </form>
-
+              <%if(messages.success){%>
+       
+                <center>
+                  <div style="width: fit-content;">
+                    <h4 style="padding: 5px 10px; color: black; background-color: limegreen; border-radius:5px;">
+                      <%=messages.success%>
+                    </h4>
+                  </div>
+                </center>
+                
+              <%}%>
               <p class="text-center">
                 <span>Already have an account?</span>
-                <a href="http://localhost:8000/login">
+                <a href="/login">
                   <span>Sign in instead</span>
                 </a>
               </p>
