@@ -1,0 +1,112 @@
+<%-include('header')%>
+
+  <form action="/user/dataenter" method="post">
+    <fieldset>
+      <legend>Customer Details</legend>
+      <div style="width: 100%; display: flex; flex-wrap: wrap;">
+        <div style="width: 33.33%;">
+          <label for="">Name:</label>
+          <input type="text" name="name" placeholder="Full Name"><br><br>
+        </div>
+        <div style="width: 33.33%;">
+          <label for="">Phone Number:</label>
+          <input type="number" name="number" placeholder="Phone Number">
+        </div>
+        <div style="width: 33.33%;">
+          <label for="">Email Address:</label>
+          <input type="email" name="email" placeholder="Email Address">
+        </div>
+        <div style="width: 50%;">
+          <label for="">Customer Address:</label>
+          <input type="text" name="address" placeholder="Street Address" style="width: 97.5%;">
+        </div>
+        <div style="width: 50%;"><br>
+          <input type="text" name="address" placeholder="Street line 2 Address" style="width: 97.5%;">
+        </div>
+        <div style="width: 25%; margin-top: 5px;">
+          <input type="text" name="address" placeholder="City">
+        </div>
+        <div style="width: 25%; margin-top: 5px;">
+          <input type="text" name="address" placeholder="Region">
+        </div>
+        <div style="width: 25%; margin-top: 5px;">
+          <input type="text" name="address" placeholder="Pin Code">
+        </div>
+        <div style="width: 25%; margin-top: 5px;">
+          <input type="text" name="address" placeholder="Country">
+        </div>
+        <div style="width: 25%;"><br>
+          <label for="">Customer ID:</label>
+          <input type="text" name="customerid" placeholder="Customer ID">
+        </div>
+        <div style="width: 25%;"><br>
+          <label for="">Servics:</label>
+          <select name="servics" id="" style="width: 97%;">
+            <option value="">----Select----</option>
+            <option value="Computer Servics">Computer Servics</option>
+            <option value="Computer Forment">Computer Forment</option>
+            <option value="Computer Data Recover">Computer Data Recover</option>
+            <option value="New Computer Systems">New Computer Systems</option>
+            <option value="Other">Other</option>
+          </select>
+        </div>
+        <div style="width: 25%;"><br>
+          <label for="">Other Servics:</label>
+          <textarea name="otherservics" id="" cols="59" rows="1" placeholder="Other Servics"></textarea>
+        </div>
+        <div style="width: 25%;"><br>
+          <label for="">Date:</label>
+          <input type="date" name="date">
+        </div>
+        <div style="width: 25%;"><br>
+          <label for="">PC Number:</label>
+          <input type="text" name="pcnumber" placeholder="PC Number">
+        </div>
+        <div style="width: 25%;"><br>
+          <label for="">Reference:</label>
+          <input type="text" name="reference" placeholder="Reference Number">
+        </div>
+        <div style="width: 25%;"><br>
+          <label for="">What work to do?</label>
+          <textarea name="work" id="" cols="122" rows="1" placeholder="Work"></textarea>
+        </div>
+        <div style="width: 100%;"><br>
+          <center>
+            <input type="submit" value="Submit" style="width: 100px; background-color: #0F4C81; border: 0; padding: 10px 15px; color: white; font-size: 20px; border-radius: 5px;">
+          </center>
+        </div>
+      </div>
+    </fieldset>
+  </form>
+
+
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+
+
+  <center>
+    <h1>data</h1>
+    <br>
+    <br>
+  
+    <% var s=database.slice(-2)%>
+    <%for(var i of s){%>
+    
+      <h1><a href="/user/show/<%=i.id%>"><%=i.name%></a></h1>
+      
+    <%}%>
+
+  </center>
+
+<%-include('footer')%>

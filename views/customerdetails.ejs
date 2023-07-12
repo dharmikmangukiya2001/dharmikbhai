@@ -1,0 +1,48 @@
+<style>
+    table{
+        border-collapse:collapse;
+    }
+</style>
+<center><h1>Shree Om Systems</h1>
+    <form action="">
+        <input type="search" name="search">
+        <input type="submit" value="submit">
+    </form>
+<table border="1">
+    <tr>
+        <th>Number</th>
+        <th>Name</th>
+        <th>Number</th>
+        <th>Email ID</th>
+        <th>Address</th>
+        <th>Customer ID</th>
+        <th>Servics</th>
+        <th>Other Servics</th>
+        <th>Date</th>
+        <th>PC Number</th>
+        <th>Reference Name</th>
+        <th>Work</th>
+        <th>Delete</th>
+    </tr>
+    <%var a=1;%>
+    
+    <%for(var i of cus){%>
+    <tr>
+        <td><%=a++%></td>
+        <td><%=i.name%></td>
+        <td><%=i.number%></td>
+        <td><%=i.email%></td>
+        <td><%=i.address%></td>
+        <td><%=i.customerid%></td>
+        <td><%=i.servics%></td>
+        <td><%=i.otherservics%></td>
+        <td><%=i.date%></td>
+        <td><%=i.pcnumber%></td>
+        <td><%=i.reference%></td>
+        <td><%=i.work%></td>
+        <td><a href="/user/delete/<%=i._id%>">Delete</a></td>
+        <td><a href="/user/update/<%=i._id%>">update</a></td>
+    </tr>
+        <%}%>
+    </table>
+</center>

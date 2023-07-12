@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SOS Customer Panel</title>
+  <link rel="shortcut icon" href="/img/favicon.ico" type="image/x-icon">
+  <style>
+    label {
+      font-weight: 600;
+    }
+
+    input {
+      width: 95%;
+    }
+  </style>
+</head>
+
+<body>
+  <center>
+    <img src="/img/SOS-LOGOS.png" alt="" width="15%">
+    <h1 style="color:rgb(20,76,93);">Shree Om Systems</h1>
+    <%for(var i of obj){%>
+      <h3>Name:<%=i.name%></h3>
+      <h3>Email:<%=i.email%></h3>
+      <h3 hidden>Password:<%=i.password%></h3>
+    <%}%>
+  </center>

@@ -1,0 +1,37 @@
+<form method="post" action="/user/update/<%=lax.id%>">
+
+    <tr>
+        <input type="text" name="id"  value="<%=lax.id%>">
+        <td>name
+            <input type="text" name="name" value="<%=lax.name%>">
+           
+        </td>
+    </tr>
+    <tr>
+        <!-- <%=lax%> -->
+        <td>mobile
+            <input type="text" name="number" value="<%=lax.number%>">
+           
+        </td>
+    </tr>
+    <tr>
+        email
+        <td>
+            <input type="text" name="email" value="<%=lax.email%>">
+           
+        </td>
+    </tr>
+    <tr>
+
+        <td>date
+            <input type="date" name="date" value="<%=lax.date%>">
+           
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <input type="submit" value="submit">
+        </td>
+    </tr>
+
+</form>
