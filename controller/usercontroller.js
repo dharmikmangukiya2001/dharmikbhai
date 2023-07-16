@@ -1,5 +1,6 @@
 const express = require('express');
 const user = require('../model/usermodel');
+const customer = require('../model/customermodel');
 const cloudinary = require('../cloud/cloudinary');
 
 //register page
@@ -109,6 +110,84 @@ module.exports.dashboard = async(req, res) => {
     }
 
 }
+
+
+
+
+module.exports.dashboarddetails = async (req, res) => {
+
+    try {
+        console.log(req.body);
+        var name = req.body.name
+        var number = req.body.number
+        var price = req.body.price
+        var address = req.body.address
+        var customerid = req.body.customerid
+        var servics = req.body.servics
+        var otherservics = req.body.otherservics
+        var idate = req.body.idate
+        var odate = req.body.odate
+        var payment= req.body.payment
+        var replacement =req.body.replacement
+        var standby =req.body.standby
+        var pcnumber = req.body.pcnumber
+        var reference = req.body.reference
+        var work = req.body.work
+        var cd = await customer.create({
+            name,
+            number,
+            price,
+            address,
+            customerid,
+            servics,
+            otherservics,
+            idate,
+            odate,
+            payment,
+            replacement,
+            standby,
+            pcnumber,
+            reference,
+            work
+        });
+
+        res.redirect('/customerdetails');
+    } catch (err) {
+        console.log(err);
+    }
+
+
+
+
+}
+
+
+
+
+module.exports.customerdetails =async (req, res) => {
+
+    try {
+        var search = '';
+        if(req.query.search){
+            search = req.query.search;
+        }
+        var cus = await customer.find({
+            $or:[
+                {name:{$regex:'.*'+search+'.*'}}
+            ]
+        });
+        res.render('customerdetails',{
+            cus
+        });
+
+    } catch (err) {
+        console.log(err);
+    }
+}
+
+
+
+
 
 //forms page
 

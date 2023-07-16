@@ -10,6 +10,8 @@ routes.get('/login',controller.login);
 routes.post('/logindata',controller.logindata);
 routes.get('/forgotpassword',controller.forgotpassword);
 routes.get('/dashboard',controller.dashboard);
+routes.post('/dataenter',controller.dashboarddetails);
+routes.get('/customerdetails',controller.customerdetails);
 routes.get('/table',controller.table);
 routes.get('/delete/:id',controller.deletes);
 routes.get('/update/:id',controller.updatepage);

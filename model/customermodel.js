@@ -6,8 +6,8 @@ const customerschema = new mongoose.Schema({
     number: {
         type: Number
     },
-    email: {
-        type: String
+    price: {
+        type: Number
     },
     address: {
         type: Array
@@ -21,7 +21,19 @@ const customerschema = new mongoose.Schema({
     otherservics: {
         type: String
     },
-    date: {
+    idate: {
+        type: String
+    },
+    odate: {
+        type: String
+    },
+    payment: {
+        type: Array
+    },
+    replacement: {
+        type: String
+    },
+    standby: {
         type: String
     },
     pcnumber: {

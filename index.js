@@ -26,6 +26,12 @@ app.use(express.static(path.join(__dirname,'assets')))
 
 app.use('/',require('./routes/user'));
 
+
+
+app.get('/',(req,res)=>{
+    res.redirect('/login');
+})
+
 app.use((req,res)=>{
     res.render('err');
 })
